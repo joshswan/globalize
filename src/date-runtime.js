@@ -28,11 +28,15 @@ Globalize.prototype.dateFormatter = function( options ) {
 	return Globalize[ runtimeKey( "dateFormatter", this._locale, [ options ] ) ];
 };
 
+Globalize.dateFormatter.funcName = "dateFormatter";
+
 Globalize.dateParser =
 Globalize.prototype.dateParser = function( options ) {
 	options = options || { skeleton: "yMd" };
 	return Globalize[ runtimeKey( "dateParser", this._locale, [ options ] ) ];
 };
+
+Globalize.dateParser.funcName = "dateParser";
 
 Globalize.formatDate =
 Globalize.prototype.formatDate = function( value, options ) {

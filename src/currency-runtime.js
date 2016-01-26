@@ -19,6 +19,8 @@ Globalize.prototype.currencyFormatter = function( currency, options ) {
 	return Globalize[ runtimeKey( "currencyFormatter", this._locale, [ currency, options ] ) ];
 };
 
+Globalize.currencyFormatter.funcName = "currencyFormatter";
+
 Globalize.formatCurrency =
 Globalize.prototype.formatCurrency = function( value, currency, options ) {
 	validateParameterPresence( value, "value" );

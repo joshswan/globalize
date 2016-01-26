@@ -30,11 +30,15 @@ Globalize.prototype.numberFormatter = function( options ) {
 	return Globalize[ runtimeKey( "numberFormatter", this._locale, [ options ] ) ];
 };
 
+Globalize.numberFormatter.funcName = "numberFormatter";
+
 Globalize.numberParser =
 Globalize.prototype.numberParser = function( options ) {
 	options = options || {};
 	return Globalize[ runtimeKey( "numberParser", this._locale, [ options ] ) ];
 };
+
+Globalize.numberParser.funcName = "numberParser";
 
 Globalize.formatNumber =
 Globalize.prototype.formatNumber = function( value, options ) {

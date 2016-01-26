@@ -23,6 +23,8 @@ Globalize.prototype.pluralGenerator = function( options ) {
 	return Globalize[ runtimeKey( "pluralGenerator", this._locale, [ options ] ) ];
 };
 
+Globalize.pluralGenerator.funcName = "pluralGenerator";
+
 return Globalize;
 
 });

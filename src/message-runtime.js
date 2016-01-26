@@ -16,6 +16,8 @@ Globalize.prototype.messageFormatter = function( /* path */ ) {
 	];
 };
 
+Globalize.messageFormatter.funcName = "messageFormatter";
+
 Globalize.formatMessage =
 Globalize.prototype.formatMessage = function( path /* , variables */ ) {
 	return this.messageFormatter( path ).apply( {}, [].slice.call( arguments, 1 ) );

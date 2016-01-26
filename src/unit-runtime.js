@@ -19,6 +19,8 @@ Globalize.prototype.unitFormatter = function( unit, options ) {
 	return Globalize[ runtimeKey( "unitFormatter", this._locale, [ unit, options ] ) ];
 };
 
+Globalize.unitFormatter.funcName = "unitFormatter";
+
 return Globalize;
 
 });

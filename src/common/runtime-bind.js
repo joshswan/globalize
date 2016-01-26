@@ -6,7 +6,7 @@ return function( args, cldr, fn, runtimeArgs ) {
 
 	// 1: fn.name isn't supported by IE.
 	var argsStr = JSON.stringify( args ),
-		fnName = fn.name || /^function\s+([\w\$]+)\s*\(/.exec( fn.toString() )[ 1 ], /* 1 */
+		fnName = fn.name || fn.funcName,
 		locale = cldr.locale;
 
 	fn.runtimeKey = runtimeKey( fnName, locale, null, argsStr );

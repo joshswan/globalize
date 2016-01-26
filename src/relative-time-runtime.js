@@ -26,6 +26,8 @@ Globalize.prototype.relativeTimeFormatter = function( unit, options ) {
 	return Globalize[ runtimeKey( "relativeTimeFormatter", this._locale, [ unit, options ] ) ];
 };
 
+Globalize.relativeTimeFormatter.funcName = "relativeTimeFormatter";
+
 return Globalize;
 
 });
