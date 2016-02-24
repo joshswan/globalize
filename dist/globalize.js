@@ -1,5 +1,5 @@
 /**
- * Globalize v1.1.0
+ * Globalize v1.1.1
  *
  * http://github.com/jquery/globalize
  *
@@ -7,10 +7,10 @@
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-01-26T18:33Z
+ * Date: 2016-02-24T05:05Z
  */
 /*!
- * Globalize v1.1.0 2016-01-26T18:33Z Released under the MIT license
+ * Globalize v1.1.1 2016-02-24T05:05Z Released under the MIT license
  * http://git.io/TrdQbw
  */
 (function( root, factory ) {
@@ -135,12 +135,24 @@ var runtimeKey = function( fnName, locale, args, argsStr ) {
 
 
 
+var functionName = function( fn ) {
+	return fn.name || fn.funcName;
+};
+
+
+
+
 var runtimeBind = function( args, cldr, fn, runtimeArgs ) {
 
-	// 1: fn.name isn't supported by IE.
 	var argsStr = JSON.stringify( args ),
-		fnName = fn.name || fn.funcName,
+		fnName = functionName( fn ),
 		locale = cldr.locale;
+
+	// If name of the function is not available, this is most likely due uglification,
+	// which most likely means we are in production, and runtimeBind here is not necessary.
+	if ( !fnName ) {
+		return fn;
+	}
 
 	fn.runtimeKey = runtimeKey( fnName, locale, null, argsStr );
 

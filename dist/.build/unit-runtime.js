@@ -9,6 +9,7 @@ Globalize.prototype.formatUnit = function( value, unit, options ) {
 
 Globalize.unitFormatter =
 Globalize.prototype.unitFormatter = function( unit, options ) {
+	options = options || {};
 	return Globalize[ runtimeKey( "unitFormatter", this._locale, [ unit, options ] ) ];
 };
 

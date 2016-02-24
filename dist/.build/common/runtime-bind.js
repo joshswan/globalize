@@ -2,10 +2,15 @@
 
 var runtimeBind = function( args, cldr, fn, runtimeArgs ) {
 
-	// 1: fn.name isn't supported by IE.
 	var argsStr = JSON.stringify( args ),
-		fnName = fn.name || fn.funcName,
+		fnName = functionName( fn ),
 		locale = cldr.locale;
+
+	// If name of the function is not available, this is most likely due uglification,
+	// which most likely means we are in production, and runtimeBind here is not necessary.
+	if ( !fnName ) {
+		return fn;
+	}
 
 	fn.runtimeKey = runtimeKey( fnName, locale, null, argsStr );
 
